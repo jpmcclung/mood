@@ -23,7 +23,7 @@
                 <RowDefinition Height="25" />
                 <RowDefinition Height="100" />
                 <RowDefinition Height="30" />
-                <RowDefinition Height="20" />
+                <RowDefinition Height="30" />
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <!-- Look up ImageButtons --> 
@@ -51,7 +51,7 @@
             <Label HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="2" Text="{Binding IndifferPercent}"/>
             <Label HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="3" Text="{Binding HappyPercent}"/>
             <Label HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="4" Text="{Binding ExcitedPercent}"/>
-            <!--<Label HorizontalTextAlignment="Center" Grid.Row="6" Grid.ColumnSpan="5" TextColor="#2196f3" FontSize="20" Text="Suicide Hotline Number:"/> -->
+            <Label HorizontalTextAlignment="Center" Grid.Row="6" Grid.ColumnSpan="5" TextColor="#2196f3" FontSize="20" Text="Suicide Hotline Number:"/>
             <Label HorizontalTextAlignment="Center" Grid.Row="7" Grid.ColumnSpan="5" TextColor="#2196f3" FontSize="20" Text="800-273-8255"/>
 
         </Grid>
