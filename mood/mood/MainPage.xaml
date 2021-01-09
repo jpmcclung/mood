@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mood.MainPage">
+             x:Class="mood.MainPage" BindingContext="{Binding Instance}">
+            
 
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
@@ -18,27 +19,40 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.05*" />
-                <RowDefinition Height="0.05*" />
-                <RowDefinition Height="0.05*" />
-                <RowDefinition Height="275" />
                 <RowDefinition Height="50" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
-            <Label Grid.ColumnSpan="5" Grid.Row="4" Text="How are you feeling today?" TextColor="#2196F3"  FontSize="28" HorizontalOptions="Center"/>
-            <Image Grid.Row="5" Source="cropextrasadborp" 
+            <!-- Look up ImageButtons --> 
+            <Label Grid.ColumnSpan="5" Grid.Row="2" Text="How are you feeling today?" TextColor="#2196F3"  FontSize="20" HorizontalOptions="Center"/>
+            <ImageButton Grid.Row="3" Source="cropextrasadborp" Clicked="OnExtraSadButtonClicked" BackgroundColor ="Transparent"
                 HeightRequest="{OnPlatform iOS=300, Android=250}"
        WidthRequest="{OnPlatform iOS=300, Android=250}"/>
-            <Image Grid.Column="1" Grid.Row="5" Source="cropsadborp" 
+            <ImageButton Grid.Column="1" Grid.Row="3" Source="cropsadborp" Clicked="OnSadButtonClicked" BackgroundColor ="Transparent"
                 HeightRequest="{OnPlatform iOS=300, Android=250}"
        WidthRequest="{OnPlatform iOS=300, Android=250}"/>
-            <Image Grid.Column="2" Grid.Row="5" Source="cropindifferborp" 
+            <ImageButton Grid.Column="2" Grid.Row="3" Source="cropindifferborp" Clicked="OnIndifferButtonClicked" BackgroundColor ="Transparent"
                 HeightRequest="{OnPlatform iOS=300, Android=250}"
        WidthRequest="{OnPlatform iOS=300, Android=250}"/>
-            <Image Grid.Column="3" Grid.Row="5" Source="cropsmileborp" 
+            <ImageButton Grid.Column="3" Grid.Row="3" Source="cropsmileborp" Clicked="OnHappyButtonClicked" BackgroundColor ="Transparent"
                 HeightRequest="{OnPlatform iOS=300, Android=250}"
        WidthRequest="{OnPlatform iOS=300, Android=250}"/>
-            <Image Grid.Column="4" Grid.Row="5" Source="cropexcitedborp" 
+            <ImageButton Grid.Column="4" Grid.Row="3" Source="cropexcitedborp" Clicked="OnExcitedButtonClicked" BackgroundColor ="Transparent"
                 HeightRequest="{OnPlatform iOS=300, Android=250}"
        WidthRequest="{OnPlatform iOS=300, Android=250}"/>
+
+            <Label Grid.ColumnSpan="5" Grid.Row="4" Text="Mood Summary" TextColor="#2196f3" FontSize="20" HorizontalOptions="Center" />
+
+            <Label HorizontalTextAlignment="Center" Grid.Row="5" Text="{Binding ExtraSadPercent}"/>
+            <Label HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="1" Text="{Binding SadPercent}"/>
+            <Label HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="2" Text="{Binding IndifferPercent}"/>
+            <Label HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="3" Text="{Binding HappyPercent}"/>
+            <Label HorizontalTextAlignment="Center" Grid.Row="5" Grid.Column="4" Text="{Binding ExcitedPercent}"/>
+            <!--<Label HorizontalTextAlignment="Center" Grid.Row="6" Grid.ColumnSpan="5" TextColor="#2196f3" FontSize="20" Text="Suicide Hotline Number:"/> -->
+            <Label HorizontalTextAlignment="Center" Grid.Row="7" Grid.ColumnSpan="5" TextColor="#2196f3" FontSize="20" Text="800-273-8255"/>
 
         </Grid>
         

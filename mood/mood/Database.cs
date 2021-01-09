@@ -19,28 +19,28 @@ namespace Mood
             _database.CreateTableAsync<Mood>().Wait();
         }
 
-        // Show the registers
+        // Show the moods
         public Task<List<Mood>> GetMoodAsync()
         {
             return _database.Table<Mood>().ToListAsync();
         }
 
-        // Save registers
-        public Task<int> SaveMoodAsync(Mood contact)
+        // Save moods
+        public Task<int> SaveMoodAsync(Mood mood)
         {
-            return _database.InsertAsync(contact);
+            return _database.InsertAsync(mood);
         }
 
-        // Delete registers
-        public Task<int> DeleteMoodAsync(Mood contact)
+        // Delete moods
+        public Task<int> DeleteMoodAsync(Mood mood)
         {
-            return _database.DeleteAsync(contact);
+            return _database.DeleteAsync(mood);
         }
 
-        // Save registers
-        public Task<int> UpdateMoodAsync(Mood contact)
+        // Save moods
+        public Task<int> UpdateMoodAsync(Mood mood)
         {
-            return _database.UpdateAsync(contact);
+            return _database.UpdateAsync(mood);
         }
     }
 }
