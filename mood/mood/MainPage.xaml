@@ -5,20 +5,44 @@
 
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            <Label Text="Mood Journal" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+        
+        <Grid Margin="20,35,20,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.05*" />
+                <RowDefinition Height="0.05*" />
+                <RowDefinition Height="0.05*" />
+                <RowDefinition Height="275" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Label Grid.ColumnSpan="5" Grid.Row="4" Text="How are you feeling today?" TextColor="#2196F3"  FontSize="28" HorizontalOptions="Center"/>
+            <Image Grid.Row="5" Source="cropextrasadborp" 
+                HeightRequest="{OnPlatform iOS=300, Android=250}"
+       WidthRequest="{OnPlatform iOS=300, Android=250}"/>
+            <Image Grid.Column="1" Grid.Row="5" Source="cropsadborp" 
+                HeightRequest="{OnPlatform iOS=300, Android=250}"
+       WidthRequest="{OnPlatform iOS=300, Android=250}"/>
+            <Image Grid.Column="2" Grid.Row="5" Source="cropindifferborp" 
+                HeightRequest="{OnPlatform iOS=300, Android=250}"
+       WidthRequest="{OnPlatform iOS=300, Android=250}"/>
+            <Image Grid.Column="3" Grid.Row="5" Source="cropsmileborp" 
+                HeightRequest="{OnPlatform iOS=300, Android=250}"
+       WidthRequest="{OnPlatform iOS=300, Android=250}"/>
+            <Image Grid.Column="4" Grid.Row="5" Source="cropexcitedborp" 
+                HeightRequest="{OnPlatform iOS=300, Android=250}"
+       WidthRequest="{OnPlatform iOS=300, Android=250}"/>
 
+        </Grid>
+        
+
+
+    </StackLayout>
 </ContentPage>
