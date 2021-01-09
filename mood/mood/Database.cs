@@ -20,28 +20,27 @@ namespace Mood
         }
 
         // Show the registers
-        public Task<List<Mood>> GetPeopleAsync()
+        public Task<List<Mood>> GetMoodAsync()
         {
             return _database.Table<Mood>().ToListAsync();
         }
 
         // Save registers
-        public Task<int> SavePersonAsync(Mood contact)
+        public Task<int> SaveMoodAsync(Mood contact)
         {
             return _database.InsertAsync(contact);
         }
 
         // Delete registers
-        public Task<int> DeletePersonAsync(Mood contact)
+        public Task<int> DeleteMoodAsync(Mood contact)
         {
             return _database.DeleteAsync(contact);
         }
 
         // Save registers
-        public Task<int> UpdatePersonAsync(Mood contact)
+        public Task<int> UpdateMoodAsync(Mood contact)
         {
             return _database.UpdateAsync(contact);
         }
     }
-}
 }

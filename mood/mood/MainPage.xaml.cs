@@ -16,21 +16,22 @@ namespace mood
         {
             InitializeComponent();
         }
-        async void OnButtonClicked(object sender, EventArgs e)
+
+        async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             {
-                var note = (Mood)BindingContext;
-                note.Date = DateTime.UtcNow;
-                await App.Database.SaveNoteAsync(note);
+                var mood = (Mood.Mood)BindingContext;
+                mood.Date = DateTime.UtcNow;
+                await App.Database.SaveMoodAsync(mood);
                 await Navigation.PopAsync();
             }
-            async void OnDeleteButtonClicked(object sender, EventArgs e)
-            {
-                var note = (Mood)BindingContext;
-                await App.Database.DeleteNoteAsync(note);
-                await Navigation.PopAsync();
-            }
+        }
 
+        async void OnDeleteButtonClicked(object sender, EventArgs e)
+        {
+            var mood = (Mood.Mood)BindingContext;
+            await App.Database.DeleteMoodAsync(mood);
+            await Navigation.PopAsync();
         }
     }
 }

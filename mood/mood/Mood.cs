@@ -9,5 +9,7 @@ namespace Mood
     {
         [PrimaryKey, AutoIncrement]
         public int Response { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }
